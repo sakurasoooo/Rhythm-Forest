@@ -11,7 +11,24 @@ config_version=4
 [application]
 
 config/name="Rhythm Forest"
+run/main_scene="res://screen/Slash.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+MusicManager="*res://managers/core/MusicManager.gd"
+Test="*res://screen/Test.tscn"
+InputManager="*res://managers/core/InputManager.gd"
+PlayerData="*res://managers/core/PlayerData.gd"
+SceneManager="*res://managers/core/SceneManager.gd"
+GameSetting="*res://managers/core/GameSetting.gd"
+SettingScreen="*res://screen/Setting.tscn"
+
+[display]
+
+window/size/height=720
+window/size/resizable=false
+mouse_cursor/custom_image="res://assets/ui/uipack-rpg/PNG/cursorGauntlet_grey.png"
 
 [gui]
 
