@@ -75,4 +75,5 @@ margin_bottom = 66.0
 text = "Back"
 
 [connection signal="visibility_changed" from="." to="." method="_on_Setting_visibility_changed"]
+[connection signal="value_changed" from="Panel/VBoxContainer/VBoxContainer/HSlider" to="." method="_on_HSlider_value_changed"]
 [connection signal="pressed" from="Panel/BackButton" to="." method="_on_BackButton_pressed"]

@@ -16,13 +16,13 @@ config/icon="res://icon.png"
 
 [autoload]
 
-MusicManager="*res://managers/core/MusicManager.gd"
+SettingScreen="*res://screen/Setting.tscn"
+MusicManager="*res://managers/core/MusicManager.tscn"
 Test="*res://screen/Test.tscn"
 InputManager="*res://managers/core/InputManager.gd"
 PlayerData="*res://managers/core/PlayerData.gd"
 SceneManager="*res://managers/core/SceneManager.gd"
 GameSetting="*res://managers/core/GameSetting.gd"
-SettingScreen="*res://screen/Setting.tscn"
 
 [display]
 
@@ -33,6 +33,24 @@ mouse_cursor/custom_image="res://assets/ui/uipack-rpg/PNG/cursorGauntlet_grey.pn
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[input]
+
+Forward={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+TurnLeft={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+TurnRight={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":76,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [physics]
 

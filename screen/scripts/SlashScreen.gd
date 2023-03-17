@@ -22,3 +22,7 @@ func _on_SettingButton_pressed():
 func on_setting_close():
 	if SettingScreen.visible == false:
 		setting_button.grab_focus()
+
+
+func _on_StartButton_pressed():
+	get_tree().change_scene("res://Levels/Tutorial.tscn")
