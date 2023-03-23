@@ -253,7 +253,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 32 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [ 8.0 ],
+"args": [ 0.0 ],
 "method": "jump_to"
 } ]
 }
@@ -270,4 +270,3 @@ stream = ExtResource( 2 )
 
 [node name="Instrument1Track" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -80.0

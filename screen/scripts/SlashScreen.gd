@@ -25,4 +25,4 @@ func on_setting_close():
 
 
 func _on_StartButton_pressed():
-	get_tree().change_scene("res://Levels/Tutorial.tscn")
+	get_tree().change_scene("res://levels/Tutorial.tscn")

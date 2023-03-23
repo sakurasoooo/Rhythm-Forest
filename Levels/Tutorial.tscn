@@ -1,18 +1,21 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=154 format=2]
 
-[ext_resource path="res://Levels/Tutorial.meshlib" type="MeshLibrary" id=1]
+[ext_resource path="res://objects/grids/CSGMesh.tscn" type="PackedScene" id=1]
 [ext_resource path="res://managers/scripts/BeatSyncAnimation.gd" type="Script" id=2]
+[ext_resource path="res://assets/TilePack/Brick05.png" type="Texture" id=3]
 [ext_resource path="res://objects/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/character/slime.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Beat"
-length = 0.5
+length = 0.4
+step = 0.04
 tracks/0/type = "bezier"
 tracks/0/path = NodePath(".:self_modulate:r")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/keys = {
 "points": PoolRealArray( 0.733333, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.5 )
@@ -22,7 +25,7 @@ tracks/1/path = NodePath(".:self_modulate:g")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.5 )
@@ -32,7 +35,7 @@ tracks/2/path = NodePath(".:self_modulate:b")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/keys = {
 "points": PoolRealArray( 0.776471, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.5 )
@@ -42,13 +45,98 @@ tracks/3/path = NodePath(".:self_modulate:a")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/keys = {
 "points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.5 )
 }
+tracks/4/type = "bezier"
+tracks/4/path = NodePath(".:rect_size:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 400, -0.25, 0, 0.25, 0, 410, -0.25, 0, 0.25, 0, 237.214, -0.25, 0, 0.25, 0, 400, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.04, 0.36, 0.4 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath(".:rect_size:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 110, -0.25, 0, 0.25, 0, 130, -0.25, 0, 0.25, 0, 81, -0.25, 0, 0.25, 0, 110, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.04, 0.36, 0.4 )
+}
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=148]
+resource_name = "Beat"
+length = 0.4
+step = 0.04
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:self_modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"points": PoolRealArray( 0.733333, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:self_modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:self_modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/keys = {
+"points": PoolRealArray( 0.776471, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath(".:self_modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath(".:rect_size:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 350, -0.25, 0, 0.25, 0, 395, -0.25, 0, 0.25, 0, 237.214, -0.25, 0, 0.25, 0, 350, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.04, 0.36, 0.4 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath(".:rect_size:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 90, -0.25, 0, 0.25, 0, 100, -0.25, 0, 0.25, 0, 81, -0.25, 0, 0.25, 0, 90, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.04, 0.36, 0.4 )
+}
+
+[sub_resource type="Animation" id=149]
 length = 0.001
 tracks/0/type = "bezier"
 tracks/0/path = NodePath(".:self_modulate:r")
@@ -90,28 +178,914 @@ tracks/3/keys = {
 "points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
+tracks/4/type = "bezier"
+tracks/4/path = NodePath(".:rect_size:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 237.214, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath(".:rect_size:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 81, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="SpatialMaterial" id=3]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=4]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=5]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=6]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=7]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=8]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=9]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=10]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=11]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=12]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=13]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=14]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=15]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=16]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=17]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=18]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=19]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=20]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=21]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=22]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=23]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=24]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=25]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=26]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=27]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=28]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=29]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=30]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=31]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=32]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=33]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=34]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=35]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=36]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=37]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=38]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=39]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=40]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=41]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=42]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=43]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=44]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=45]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=46]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=47]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=48]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=49]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=50]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=51]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=52]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=53]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=54]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=55]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=56]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=57]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=58]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=59]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=60]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=61]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=62]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=63]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=64]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=65]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=66]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=67]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=68]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=69]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=70]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=71]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=72]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=73]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=74]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=75]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=76]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=77]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=78]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=79]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=80]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=81]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=82]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=83]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=84]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=85]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=86]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=87]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=88]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=89]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=90]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=91]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=92]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=93]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=94]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=95]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=96]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=97]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=98]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=99]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=100]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=101]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=102]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=103]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=104]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=105]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=106]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=107]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=108]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=109]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=110]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=111]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=112]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=113]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=114]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=115]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=116]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=117]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=118]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=119]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=120]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=121]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=122]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=123]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=124]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=125]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=126]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=127]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=128]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=129]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=130]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=131]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=132]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=133]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=134]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=135]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=136]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=137]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=138]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=139]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=140]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=141]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=142]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=143]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=144]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=145]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="Animation" id=147]
+resource_name = "Beat"
+length = 0.4
+step = 0.04
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Slime:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 7, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.04, 0.08, 0.12, 0.16, 0.2, 0.24, 0.28, 0.32 )
+}
+
+[sub_resource type="Animation" id=146]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Slime:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
 
 [node name="Spatial" type="Spatial"]
-
-[node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource( 1 )
-data = {
-"cells": PoolIntArray( -65536, 0, 1, -65535, 0, 1, -65534, 0, 1, -7, 0, 1, -6, 0, 1, -5, 0, 1, -4, 0, 1, -3, 0, 1, -2, 0, 1, -1, 0, 1, -65536, 1, 1, -65535, 1, 1, -65534, 1, 1, -5, 1, 1, -4, 1, 1, -3, 1, 1, -2, 1, 1, -1, 1, 1, -65536, 2, 1, -65535, 2, 1, -65534, 2, 1, -6, 2, 1, -5, 2, 1, -4, 2, 1, -3, 2, 1, -2, 2, 1, -1, 2, 1, -65536, 3, 1, -65535, 3, 1, -65534, 3, 1, -5, 3, 1, -4, 3, 1, -3, 3, 1, -2, 3, 1, -1, 3, 1, -65534, 4, 1, -65534, 5, 1, 131064, 65518, 0, -65536, 65531, 1, -65535, 65531, 1, -65534, 65531, 1, -6, 65531, 1, -5, 65531, 1, -4, 65531, 1, -3, 65531, 1, -2, 65531, 1, -1, 65531, 1, -65536, 65532, 1, -65535, 65532, 1, -65534, 65532, 1, -65536, 65533, 1, -65535, 65533, 1, -65534, 65533, 1, -5, 65533, 1, -4, 65533, 1, -3, 65533, 1, -2, 65533, 1, -1, 65533, 1, -65536, 65534, 1, -65535, 65534, 1, -65534, 65534, 1, -5, 65534, 1, -4, 65534, 1, -3, 65534, 1, -2, 65534, 1, -1, 65534, 1, -65536, 65535, 1, -65535, 65535, 1, -65534, 65535, 1, -7, 65535, 1, -6, 65535, 1, -5, 65535, 1, -4, 65535, 1, -3, 65535, 1, -2, 65535, 1, -1, 65535, 1 )
-}
-__meta__ = {
-"_editor_clip_": 0,
-"_editor_floor_": Vector3( 0, -1, 0 )
-}
-
-[node name="GridMap2" type="GridMap" parent="."]
-mesh_library = ExtResource( 1 )
-data = {
-"cells": PoolIntArray( 1, 0, 0, 65530, 0, 0, 65532, 0, 0, 65533, 0, 0, 65535, 0, 0, -65536, 0, 1, -65535, 0, 1, -65534, 0, 1, -7, 0, 1, -6, 0, 1, -5, 0, 1, -4, 0, 1, -3, 0, 1, -2, 0, 1, -1, 0, 1, 1, 1, 0, 65530, 1, 0, 65535, 1, 0, -65536, 1, 1, -65535, 1, 1, -65534, 1, 1, -5, 1, 1, -4, 1, 1, -3, 1, 1, -2, 1, 1, -1, 1, 1, 1, 2, 0, 65530, 2, 0, 65532, 2, 0, 65533, 2, 0, 65534, 2, 0, 65535, 2, 0, -65536, 2, 1, -65535, 2, 1, -65534, 2, 1, -4, 2, 1, -3, 2, 1, -2, 2, 1, -1, 2, 1, 1, 3, 0, 65530, 3, 0, -65536, 3, 1, -65535, 3, 1, -65534, 3, 1, -4, 3, 1, -3, 3, 1, -2, 3, 1, -1, 3, 1, 0, 4, 0, 1, 4, 0, 65530, 4, 0, 65531, 4, 0, 65532, 4, 0, 65533, 4, 0, 65534, 4, 0, 65535, 4, 0, 131064, 65518, 0, 0, 65532, 0, 1, 65532, 0, 65530, 65532, 0, 65531, 65532, 0, 65532, 65532, 0, 65533, 65532, 0, 65534, 65532, 0, 65535, 65532, 0, -65536, 65532, 1, -65535, 65532, 1, 1, 65533, 0, 65530, 65533, 0, -65536, 65533, 1, -65535, 65533, 1, -65534, 65533, 1, -4, 65533, 1, -3, 65533, 1, -2, 65533, 1, -1, 65533, 1, 1, 65534, 0, 65530, 65534, 0, 65532, 65534, 0, 65533, 65534, 0, 65534, 65534, 0, 65535, 65534, 0, -65536, 65534, 1, -65535, 65534, 1, -65534, 65534, 1, -5, 65534, 1, -4, 65534, 1, -3, 65534, 1, -2, 65534, 1, -1, 65534, 1, 1, 65535, 0, 65530, 65535, 0, 65532, 65535, 0, 65535, 65535, 0, -65536, 65535, 1, -65535, 65535, 1, -65534, 65535, 1, -7, 65535, 1, -6, 65535, 1, -5, 65535, 1, -4, 65535, 1, -3, 65535, 1, -2, 65535, 1, -1, 65535, 1 )
-}
-__meta__ = {
-"_editor_clip_": 0,
-"_editor_floor_": Vector3( 0, 0, 0 )
-}
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1 )
@@ -119,10 +1093,607 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-margin_right = 235.0
-margin_bottom = 81.0
+margin_right = 400.0
+margin_bottom = 110.0
+color = Color( 0.941176, 0.443137, 1, 0.423529 )
 script = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/ColorRect"]
 anims/Beat = SubResource( 1 )
-anims/RESET = SubResource( 2 )
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+margin_right = 237.214
+margin_bottom = 81.0
+color = Color( 0.258824, 0.635294, 0, 1 )
+script = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/ColorRect2"]
+anims/Beat = SubResource( 148 )
+anims/RESET = SubResource( 149 )
+
+[node name="Grids" type="Spatial" parent="."]
+
+[node name="CSGMesh" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 1 )
+material = SubResource( 3 )
+
+[node name="CSGMesh2" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1, 1 )
+material = SubResource( 4 )
+
+[node name="CSGMesh3" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -1, 1 )
+material = SubResource( 5 )
+
+[node name="CSGMesh4" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -1, 1 )
+material = SubResource( 6 )
+
+[node name="CSGMesh5" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -1, 1 )
+material = SubResource( 7 )
+
+[node name="CSGMesh6" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -1, 1 )
+material = SubResource( 8 )
+
+[node name="CSGMesh7" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, -1, 1 )
+material = SubResource( 9 )
+
+[node name="CSGMesh8" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -1, 1 )
+material = SubResource( 10 )
+
+[node name="CSGMesh9" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 1 )
+material = SubResource( 11 )
+
+[node name="CSGMesh10" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -1, 1 )
+material = SubResource( 12 )
+
+[node name="CSGMesh11" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -1, 1 )
+material = SubResource( 13 )
+
+[node name="CSGMesh12" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1, 1 )
+material = SubResource( 14 )
+
+[node name="CSGMesh13" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -1, 1 )
+material = SubResource( 15 )
+
+[node name="CSGMesh14" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -1 )
+material = SubResource( 16 )
+
+[node name="CSGMesh15" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1, -1 )
+material = SubResource( 17 )
+
+[node name="CSGMesh16" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -1, -1 )
+material = SubResource( 18 )
+
+[node name="CSGMesh17" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -1, -1 )
+material = SubResource( 19 )
+
+[node name="CSGMesh18" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -1, -1 )
+material = SubResource( 20 )
+
+[node name="CSGMesh19" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -1, -1 )
+material = SubResource( 21 )
+
+[node name="CSGMesh20" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, -1, -1 )
+material = SubResource( 22 )
+
+[node name="CSGMesh21" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -1, -1 )
+material = SubResource( 23 )
+
+[node name="CSGMesh22" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, -1 )
+material = SubResource( 24 )
+
+[node name="CSGMesh23" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -1, -1 )
+material = SubResource( 25 )
+
+[node name="CSGMesh24" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -1, -1 )
+material = SubResource( 26 )
+
+[node name="CSGMesh25" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1, -1 )
+material = SubResource( 27 )
+
+[node name="CSGMesh26" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -1, -1 )
+material = SubResource( 28 )
+
+[node name="CSGMesh27" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -3 )
+material = SubResource( 29 )
+
+[node name="CSGMesh28" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1, -3 )
+material = SubResource( 30 )
+
+[node name="CSGMesh29" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -1, -3 )
+material = SubResource( 31 )
+
+[node name="CSGMesh30" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -1, -3 )
+material = SubResource( 32 )
+
+[node name="CSGMesh31" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -1, -3 )
+material = SubResource( 33 )
+
+[node name="CSGMesh32" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -1, -3 )
+material = SubResource( 34 )
+
+[node name="CSGMesh33" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, -1, -3 )
+material = SubResource( 35 )
+
+[node name="CSGMesh34" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -1, -3 )
+material = SubResource( 36 )
+
+[node name="CSGMesh35" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, -3 )
+material = SubResource( 37 )
+
+[node name="CSGMesh36" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -1, -3 )
+material = SubResource( 38 )
+
+[node name="CSGMesh37" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -1, -3 )
+material = SubResource( 39 )
+
+[node name="CSGMesh38" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1, -3 )
+material = SubResource( 40 )
+
+[node name="CSGMesh39" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -1, -3 )
+material = SubResource( 41 )
+
+[node name="CSGMesh40" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -5 )
+material = SubResource( 42 )
+
+[node name="CSGMesh41" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1, -5 )
+material = SubResource( 43 )
+
+[node name="CSGMesh42" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -1, -5 )
+material = SubResource( 44 )
+
+[node name="CSGMesh43" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -1, -5 )
+material = SubResource( 45 )
+
+[node name="CSGMesh44" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -1, -5 )
+material = SubResource( 46 )
+
+[node name="CSGMesh45" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -1, -5 )
+material = SubResource( 47 )
+
+[node name="CSGMesh46" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, -1, -5 )
+material = SubResource( 48 )
+
+[node name="CSGMesh47" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -1, -5 )
+material = SubResource( 49 )
+
+[node name="CSGMesh48" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, -5 )
+material = SubResource( 50 )
+
+[node name="CSGMesh49" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -1, -5 )
+material = SubResource( 51 )
+
+[node name="CSGMesh50" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -1, -5 )
+material = SubResource( 52 )
+
+[node name="CSGMesh51" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1, -5 )
+material = SubResource( 53 )
+
+[node name="CSGMesh52" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -1, -5 )
+material = SubResource( 54 )
+
+[node name="CSGMesh53" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 3 )
+material = SubResource( 55 )
+
+[node name="CSGMesh54" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1, 3 )
+material = SubResource( 56 )
+
+[node name="CSGMesh55" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -1, 3 )
+material = SubResource( 57 )
+
+[node name="CSGMesh56" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -1, 3 )
+material = SubResource( 58 )
+
+[node name="CSGMesh57" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -1, 3 )
+material = SubResource( 59 )
+
+[node name="CSGMesh58" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -1, 3 )
+material = SubResource( 60 )
+
+[node name="CSGMesh59" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, -1, 3 )
+material = SubResource( 61 )
+
+[node name="CSGMesh60" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -1, 3 )
+material = SubResource( 62 )
+
+[node name="CSGMesh61" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 3 )
+material = SubResource( 63 )
+
+[node name="CSGMesh62" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -1, 3 )
+material = SubResource( 64 )
+
+[node name="CSGMesh63" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -1, 3 )
+material = SubResource( 65 )
+
+[node name="CSGMesh64" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1, 3 )
+material = SubResource( 66 )
+
+[node name="CSGMesh65" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -1, 3 )
+material = SubResource( 67 )
+
+[node name="CSGMesh66" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 5 )
+material = SubResource( 68 )
+
+[node name="CSGMesh67" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1, 5 )
+material = SubResource( 69 )
+
+[node name="CSGMesh68" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -1, 5 )
+material = SubResource( 70 )
+
+[node name="CSGMesh69" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -1, 5 )
+material = SubResource( 71 )
+
+[node name="CSGMesh70" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -1, 5 )
+material = SubResource( 72 )
+
+[node name="CSGMesh71" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -1, 5 )
+material = SubResource( 73 )
+
+[node name="CSGMesh72" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, -1, 5 )
+material = SubResource( 74 )
+
+[node name="CSGMesh73" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -1, 5 )
+material = SubResource( 75 )
+
+[node name="CSGMesh74" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 5 )
+material = SubResource( 76 )
+
+[node name="CSGMesh75" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -1, 5 )
+material = SubResource( 77 )
+
+[node name="CSGMesh76" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -1, 5 )
+material = SubResource( 78 )
+
+[node name="CSGMesh77" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1, 5 )
+material = SubResource( 79 )
+
+[node name="CSGMesh78" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -1, 5 )
+material = SubResource( 80 )
+
+[node name="CSGMesh79" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 7 )
+material = SubResource( 81 )
+
+[node name="CSGMesh80" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1, 7 )
+material = SubResource( 82 )
+
+[node name="CSGMesh81" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -1, 7 )
+material = SubResource( 83 )
+
+[node name="CSGMesh82" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -1, 7 )
+material = SubResource( 84 )
+
+[node name="CSGMesh83" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -1, 7 )
+material = SubResource( 85 )
+
+[node name="CSGMesh84" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -1, 7 )
+material = SubResource( 86 )
+
+[node name="CSGMesh85" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, -1, 7 )
+material = SubResource( 87 )
+
+[node name="CSGMesh86" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -1, 7 )
+material = SubResource( 88 )
+
+[node name="CSGMesh87" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 7 )
+material = SubResource( 89 )
+
+[node name="CSGMesh88" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -1, 7 )
+material = SubResource( 90 )
+
+[node name="CSGMesh89" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -1, 7 )
+material = SubResource( 91 )
+
+[node name="CSGMesh90" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1, 7 )
+material = SubResource( 92 )
+
+[node name="CSGMesh91" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -1, 7 )
+material = SubResource( 93 )
+
+[node name="CSGMesh92" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 9 )
+material = SubResource( 94 )
+
+[node name="CSGMesh93" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1, 9 )
+material = SubResource( 95 )
+
+[node name="CSGMesh94" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -1, 9 )
+material = SubResource( 96 )
+
+[node name="CSGMesh95" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -1, 9 )
+material = SubResource( 97 )
+
+[node name="CSGMesh96" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -1, 9 )
+material = SubResource( 98 )
+
+[node name="CSGMesh97" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -1, 9 )
+material = SubResource( 99 )
+
+[node name="CSGMesh98" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, -1, 9 )
+material = SubResource( 100 )
+
+[node name="CSGMesh99" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -1, 9 )
+material = SubResource( 101 )
+
+[node name="CSGMesh100" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 9 )
+material = SubResource( 102 )
+
+[node name="CSGMesh101" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -1, 9 )
+material = SubResource( 103 )
+
+[node name="CSGMesh102" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -1, 9 )
+material = SubResource( 104 )
+
+[node name="CSGMesh103" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1, 9 )
+material = SubResource( 105 )
+
+[node name="CSGMesh104" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -1, 9 )
+material = SubResource( 106 )
+
+[node name="CSGMesh105" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 11 )
+material = SubResource( 107 )
+
+[node name="CSGMesh106" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1, 11 )
+material = SubResource( 108 )
+
+[node name="CSGMesh107" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -1, 11 )
+material = SubResource( 109 )
+
+[node name="CSGMesh108" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -1, 11 )
+material = SubResource( 110 )
+
+[node name="CSGMesh109" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -1, 11 )
+material = SubResource( 111 )
+
+[node name="CSGMesh110" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -1, 11 )
+material = SubResource( 112 )
+
+[node name="CSGMesh111" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, -1, 11 )
+material = SubResource( 113 )
+
+[node name="CSGMesh112" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -1, 11 )
+material = SubResource( 114 )
+
+[node name="CSGMesh113" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 11 )
+material = SubResource( 115 )
+
+[node name="CSGMesh114" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -1, 11 )
+material = SubResource( 116 )
+
+[node name="CSGMesh115" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -1, 11 )
+material = SubResource( 117 )
+
+[node name="CSGMesh116" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1, 11 )
+material = SubResource( 118 )
+
+[node name="CSGMesh117" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -1, 11 )
+material = SubResource( 119 )
+
+[node name="CSGMesh118" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 13 )
+material = SubResource( 120 )
+
+[node name="CSGMesh119" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1, 13 )
+material = SubResource( 121 )
+
+[node name="CSGMesh120" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -1, 13 )
+material = SubResource( 122 )
+
+[node name="CSGMesh121" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -1, 13 )
+material = SubResource( 123 )
+
+[node name="CSGMesh122" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -1, 13 )
+material = SubResource( 124 )
+
+[node name="CSGMesh123" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -1, 13 )
+material = SubResource( 125 )
+
+[node name="CSGMesh124" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, -1, 13 )
+material = SubResource( 126 )
+
+[node name="CSGMesh125" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -1, 13 )
+material = SubResource( 127 )
+
+[node name="CSGMesh126" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 13 )
+material = SubResource( 128 )
+
+[node name="CSGMesh127" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -1, 13 )
+material = SubResource( 129 )
+
+[node name="CSGMesh128" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -1, 13 )
+material = SubResource( 130 )
+
+[node name="CSGMesh129" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1, 13 )
+material = SubResource( 131 )
+
+[node name="CSGMesh130" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -1, 13 )
+material = SubResource( 132 )
+
+[node name="CSGMesh131" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 15 )
+material = SubResource( 133 )
+
+[node name="CSGMesh132" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1, 15 )
+material = SubResource( 134 )
+
+[node name="CSGMesh133" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -1, 15 )
+material = SubResource( 135 )
+
+[node name="CSGMesh134" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -1, 15 )
+material = SubResource( 136 )
+
+[node name="CSGMesh135" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -1, 15 )
+material = SubResource( 137 )
+
+[node name="CSGMesh136" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -1, 15 )
+material = SubResource( 138 )
+
+[node name="CSGMesh137" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, -1, 15 )
+material = SubResource( 139 )
+
+[node name="CSGMesh138" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -1, 15 )
+material = SubResource( 140 )
+
+[node name="CSGMesh139" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 15 )
+material = SubResource( 141 )
+
+[node name="CSGMesh140" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -1, 15 )
+material = SubResource( 142 )
+
+[node name="CSGMesh141" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -1, 15 )
+material = SubResource( 143 )
+
+[node name="CSGMesh142" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1, 15 )
+material = SubResource( 144 )
+
+[node name="CSGMesh143" parent="Grids" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -1, 15 )
+material = SubResource( 145 )
+
+[node name="Slime" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.57, 3.48 )
+billboard = 2
+texture = ExtResource( 5 )
+hframes = 10
+script = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Slime"]
+root_node = NodePath("../..")
+autoplay = "Beat"
+anims/Beat = SubResource( 147 )
+anims/RESET = SubResource( 146 )

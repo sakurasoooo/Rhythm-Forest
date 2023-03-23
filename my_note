@@ -1,2 +1,4 @@
 #NOTE
 最后添加节点先处理inputevent
+
+godot3.5 GLES3的shader 在webGL上不工作

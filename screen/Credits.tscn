@@ -82,7 +82,7 @@ align = 1
 [node name="Section2" type="VBoxContainer" parent="Canvas/Container"]
 margin_top = 337.0
 margin_right = 426.0
-margin_bottom = 416.0
+margin_bottom = 417.0
 
 [node name="Title" type="Label" parent="Canvas/Container/Section2"]
 margin_right = 426.0
@@ -94,15 +94,21 @@ align = 1
 [node name="Name" type="Label" parent="Canvas/Container/Section2"]
 margin_top = 28.0
 margin_right = 426.0
-margin_bottom = 79.0
-text = "Kenney
-https://www.kenney.nl/"
+margin_bottom = 52.0
+text = "Kenney - https://www.kenney.nl/"
+align = 1
+
+[node name="Name2" type="Label" parent="Canvas/Container/Section2"]
+margin_top = 56.0
+margin_right = 426.0
+margin_bottom = 80.0
+text = "Marauder Games - Pixel Art Tiles"
 align = 1
 
 [node name="Section3" type="VBoxContainer" parent="Canvas/Container"]
-margin_top = 466.0
+margin_top = 467.0
 margin_right = 426.0
-margin_bottom = 518.0
+margin_bottom = 519.0
 
 [node name="Title" type="Label" parent="Canvas/Container/Section3"]
 margin_right = 426.0
