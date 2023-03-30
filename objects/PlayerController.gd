@@ -20,7 +20,7 @@ func _physics_process(delta):
 
 
 	if Input.is_action_just_pressed("Forward") and just_beat < 0:
-		just_pressed = 0.1
+		just_pressed = 0.2
 	
 	if just_pressed >= 0 and just_beat >= 0 and not beat_pass:
 		just_pressed = -1
