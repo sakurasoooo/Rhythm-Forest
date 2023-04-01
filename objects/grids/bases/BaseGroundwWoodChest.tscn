@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/TilePack/Brick05.png" type="Texture" id=1]
+[ext_resource path="res://objects/grids/ground/Ground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/grids/ceiling/Ceiling.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/chest/WoodChest.tscn" type="PackedScene" id=4]
+
+[sub_resource type="SpatialMaterial" id=1]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 1 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[node name="Base" type="Spatial"]
+
+[node name="Ceiling" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
+
+[node name="Chest" parent="." instance=ExtResource( 4 )]
+
+[node name="Ground" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+material/0 = SubResource( 1 )

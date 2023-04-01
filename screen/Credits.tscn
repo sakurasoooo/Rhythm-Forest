@@ -82,7 +82,7 @@ align = 1
 [node name="Section2" type="VBoxContainer" parent="Canvas/Container"]
 margin_top = 337.0
 margin_right = 426.0
-margin_bottom = 417.0
+margin_bottom = 501.0
 
 [node name="Title" type="Label" parent="Canvas/Container/Section2"]
 margin_right = 426.0
@@ -95,20 +95,41 @@ align = 1
 margin_top = 28.0
 margin_right = 426.0
 margin_bottom = 52.0
-text = "Kenney - https://www.kenney.nl/"
+text = "Kenney - Font"
 align = 1
 
-[node name="Name2" type="Label" parent="Canvas/Container/Section2"]
+[node name="Name4" type="Label" parent="Canvas/Container/Section2"]
 margin_top = 56.0
 margin_right = 426.0
 margin_bottom = 80.0
+text = "Kenney - VFX"
+align = 1
+
+[node name="Name2" type="Label" parent="Canvas/Container/Section2"]
+margin_top = 84.0
+margin_right = 426.0
+margin_bottom = 108.0
 text = "Marauder Games - Pixel Art Tiles"
 align = 1
 
-[node name="Section3" type="VBoxContainer" parent="Canvas/Container"]
-margin_top = 467.0
+[node name="Name3" type="Label" parent="Canvas/Container/Section2"]
+margin_top = 112.0
 margin_right = 426.0
-margin_bottom = 519.0
+margin_bottom = 136.0
+text = "Odd1In- chests"
+align = 1
+
+[node name="Name5" type="Label" parent="Canvas/Container/Section2"]
+margin_top = 140.0
+margin_right = 426.0
+margin_bottom = 164.0
+text = "MIKUNUONUO - Slime"
+align = 1
+
+[node name="Section3" type="VBoxContainer" parent="Canvas/Container"]
+margin_top = 551.0
+margin_right = 426.0
+margin_bottom = 603.0
 
 [node name="Title" type="Label" parent="Canvas/Container/Section3"]
 margin_right = 426.0

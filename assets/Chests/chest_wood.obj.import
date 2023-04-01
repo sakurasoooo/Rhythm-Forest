@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/chest_wood.obj-53168f799e8484dfd298ff0ee3de113d.mesh"
+
+[deps]
+
+files=[ "res://.import/chest_wood.obj-53168f799e8484dfd298ff0ee3de113d.mesh" ]
+
+source_file="res://assets/Chests/chest_wood.obj"
+dest_files=[ "res://.import/chest_wood.obj-53168f799e8484dfd298ff0ee3de113d.mesh", "res://.import/chest_wood.obj-53168f799e8484dfd298ff0ee3de113d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

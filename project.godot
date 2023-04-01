@@ -92,6 +92,7 @@ TurnRight={
 3d_physics/layer_7="Void"
 3d_physics/layer_8="Trap"
 3d_physics/layer_9="Water"
+3d_physics/layer_10="Chest"
 3d_physics/layer_11="Destroyable"
 
 [physics]
