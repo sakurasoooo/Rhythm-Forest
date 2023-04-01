@@ -1,0 +1,41 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/TilePack/Water06.png" type="Texture" id=1]
+[ext_resource path="res://assets/TilePack/Water08.png" type="Texture" id=2]
+[ext_resource path="res://objects/grids/ceiling/Ceiling.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/TilePack/Land20.png" type="Texture" id=4]
+[ext_resource path="res://assets/TilePack/Water07.png" type="Texture" id=5]
+[ext_resource path="res://objects/grids/ground/Water.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/TilePack/Water05.png" type="Texture" id=7]
+
+[sub_resource type="SpatialMaterial" id=2]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="AnimatedTexture" id=4]
+frames = 4
+frame_0/texture = ExtResource( 7 )
+frame_1/texture = ExtResource( 1 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 5 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 2 )
+frame_3/delay_sec = 0.0
+
+[sub_resource type="SpatialMaterial" id=5]
+resource_local_to_scene = true
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_texture = SubResource( 4 )
+
+[node name="Base" type="Spatial"]
+
+[node name="Ceiling" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
+material = SubResource( 2 )
+
+[node name="Ground" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+material = SubResource( 5 )

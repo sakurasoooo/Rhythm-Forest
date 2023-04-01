@@ -28,8 +28,10 @@ var random = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
-func new_map_arr(size: int):
+
+func new_map_arr(size: int) -> Array:
 	randomize()
+	random.randomize()
 	var x = size
 	var arr = generate_2d_array(x)
 
@@ -55,6 +57,7 @@ func new_map_arr(size: int):
 	generate_safe_room(start,arr)
 	for row in arr:
 		print(row)
+	return arr
 
 
 func generate_2d_array(x: int) -> Array:
@@ -97,14 +100,14 @@ func dfs_2d_array(start: Vector2, end: Vector2, arr: Array):
 	for _c in range(rows):
 		var visit = []
 		for _v in range(cols):
-			visit.append(true)
+			visit.append(false)
 		visited.append(visit)
 
-	dfs_helper(start, end, arr, int(start[0]), int(start[1]), 0, visited.duplicate(true))
+	dfs_helper(end, arr, int(start[0]), int(start[1]), 0, visited.duplicate(true))
 
 
 func dfs_helper(
-	start: Vector2, end: Vector2, arr: Array, i: int, j: int, deep: int, visited: Array
+	end: Vector2, arr: Array, i: int, j: int, deep: int, visited: Array
 ):
 	var rows = len(arr)
 	var directions = [Vector2(0, 1), Vector2(1, 0), Vector2(0, -1), Vector2(-1, 0)]
@@ -133,7 +136,7 @@ func dfs_helper(
 	if deep > (rows - 1) * 3:
 		arr[i][j] = TRAP
 		return 2
-	random.shuffle(directions)
+	directions.shuffle()
 
 	for _count in range(4):
 		var d = directions[len(directions) - 1]
@@ -141,9 +144,8 @@ func dfs_helper(
 			if arr[i + d[0]][j + d[1]] == PATH:
 				var temp = directions.pop_back()
 				directions.push_front(temp)
-
 	for d in directions:
-		var value = dfs_helper(start, end, arr, i + d[0], j + d[1], deep, visited.duplicate(true))
+		var value = dfs_helper(end, arr, i + d[0], j + d[1], deep, visited.duplicate(true))
 		if value >= 1:
 			if arr[i][j] == WALL:
 				arr[i][j] = PATH

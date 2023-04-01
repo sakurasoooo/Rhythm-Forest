@@ -28,10 +28,17 @@ albedo_texture = ExtResource( 1 )
 [node name="Base" type="Spatial"]
 
 [node name="Ceiling" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
+material = SubResource( 2 )
+
+[node name="Ceiling2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
 material = SubResource( 2 )
 
 [node name="Wall" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 material = SubResource( 3 )
 
 [node name="Ground" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 material = SubResource( 1 )
