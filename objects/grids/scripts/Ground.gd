@@ -9,7 +9,7 @@ var disco_mat:Material
 func _ready():
 	var _ret = MusicManager.connect("beat",self,"_on_beat")
 	var mat = get_active_material(0)
-	disco_mat = mat.next_pass
+	disco_mat = mat
 	# disco_mat = SpatialMaterial.new()
 	# disco_mat.params_blend_mode = SpatialMaterial.BLEND_MODE_MUL
 	# mat.next_pass = disco_mat
@@ -18,16 +18,17 @@ func _ready():
 	
 
 func _on_beat(_value):
-	if ((int(translation.z) + int(translation.x)) / 2) % 2  == 0:
+	
+	if ((int(global_translation.z) + int(global_translation.x)) / 2) % 2  == 0:
 		if count == 0:
 			set_mesh_color(Color.white)
 		if count == 1:
 			set_mesh_color(Color.violet)
-	# else:
-	# 	if count == 1:
-	# 		set_mesh_color(Color.white)
-	# 	if count == 0:
-	# 		set_mesh_color(Color.green)
+	else:
+		if count == 1:
+			set_mesh_color(Color.white)
+		if count == 0:
+			set_mesh_color(Color.green)
 
 	count+=1;
 	if count > 1:

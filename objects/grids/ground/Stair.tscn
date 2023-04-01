@@ -1,20 +1,50 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://objects/grids/ground/Stair.material" type="Material" id=1]
-[ext_resource path="res://objects/grids/scripts/Ground.gd" type="Script" id=2]
-[ext_resource path="res://objects/grids/ground/tilemesh.res" type="CubeMesh" id=3]
+[ext_resource path="res://assets/kenney_particle-pack/PNG (Transparent)/circle_03.png" type="Texture" id=2]
+[ext_resource path="res://objects/grids/mesh/tilemesh.res" type="CubeMesh" id=3]
 
 [sub_resource type="BoxShape" id=3]
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_transparent = true
+flags_do_not_receive_shadows = true
+vertex_color_use_as_albedo = true
+params_diffuse_mode = 4
+params_specular_mode = 4
+params_blend_mode = 1
+params_cull_mode = 2
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=5]
+material = SubResource( 4 )
+
+[sub_resource type="Gradient" id=6]
+offsets = PoolRealArray( 0, 0.59949, 0.946429, 1 )
+colors = PoolColorArray( 0, 0.427471, 0.152628, 1, 0.2, 0.780392, 0, 1, 0, 0.62711, 0.0312569, 0.0535714, 1, 1, 1, 0 )
 
 [node name="Ground" type="MeshInstance"]
 mesh = ExtResource( 3 )
 material/0 = ExtResource( 1 )
-script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Area" type="Area" parent="."]
+collision_layer = 18
+collision_mask = 0
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 shape = SubResource( 3 )
+
+[node name="CPUParticles" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.1, 0 )
+amount = 4
+mesh = SubResource( 5 )
+direction = Vector3( 0, 0, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 2.0
+damping = 1.0
+scale_amount = 2.0
+color_ramp = SubResource( 6 )

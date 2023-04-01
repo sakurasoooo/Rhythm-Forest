@@ -51,7 +51,7 @@ texture={
 "flags/anisotropic": false,
 "flags/filter": false,
 "flags/mipmaps": false,
-"flags/repeat": 0,
+"flags/repeat": 1,
 "flags/srgb": 2,
 "process/HDR_as_SRGB": false,
 "process/fix_alpha_border": true,
@@ -87,6 +87,7 @@ TurnRight={
 3d_physics/layer_2="Ground"
 3d_physics/layer_3="Player"
 3d_physics/layer_4="Enemy"
+3d_physics/layer_5="Stair"
 3d_physics/layer_6="Default"
 3d_physics/layer_7="Void"
 3d_physics/layer_8="Trap"

@@ -18,7 +18,7 @@ enum { STONE, EMPTY, WALL, PLAYER, STAIR, ITEM, TRAP, MONSTOR, CHEST, PATH }
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	return
 	yield (get_tree().create_timer(0.1),"timeout")
 
 	next_level()
@@ -42,7 +42,7 @@ func next_level():
 					new_grid.translation = grid_to_axis(Vector2(i,j))
 					# print("stone")
 				EMPTY:
-					var new_grid = empty_grid.duplicate(true).instance()
+					var new_grid = empty_grid.instance()
 					map_root.add_child(new_grid)
 					row_map[j] = new_grid
 					new_grid.translation = grid_to_axis(Vector2(i,j))
@@ -62,7 +62,7 @@ func next_level():
 					player.translation = new_grid.translation
 					# print("player")
 				STAIR:
-					var new_grid = water_trap_grid.instance()
+					var new_grid = stair_grid.instance()
 					map_root.add_child(new_grid)
 					row_map[j] = new_grid
 					new_grid.translation = grid_to_axis(Vector2(i,j))
