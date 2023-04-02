@@ -7,6 +7,8 @@ var audio_delay := 0
 
 var graphic_delay := 0
 
+var delay:float = 0.05
+
 func _set_main_volume(value):
 	main_volume = value
 	if value > 0:
