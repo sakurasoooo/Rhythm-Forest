@@ -20,6 +20,8 @@ func _unhandled_input(_event):
 	if Input.is_action_just_pressed("Forward"):
 		forward_just_pressed = 0.1 + GameSetting.delay
 
+		
+
 	if Input.is_action_just_pressed("TurnLeft"):
 		left_just_pressed = 0.1
 		right_just_pressed = -1
@@ -54,3 +56,6 @@ func unlock():
 
 	if _lock_count == 0:
 		locked = false
+
+func get_forward_just_pressed_elapsed():
+	return  0.1 + GameSetting.delay - forward_just_pressed
