@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody",
+"class": "PlayerControllter",
+"language": "GDScript",
+"path": "res://objects/PlayerController.gd"
+} ]
+_global_script_class_icons={
+"PlayerControllter": ""
+}
+
 [application]
 
 config/name="Rhythm Forest"
@@ -23,11 +33,14 @@ InputManager="*res://managers/core/InputManager.gd"
 PlayerData="*res://managers/core/PlayerData.gd"
 SceneManager="*res://managers/core/SceneManager.gd"
 GameSetting="*res://managers/core/GameSetting.gd"
+Global="*res://managers/scripts/Global.gd"
 
 [debug]
 
 settings/fps/force_fps=60
 settings/stdout/print_fps=true
+gdscript/warnings/unused_signal=false
+gdscript/warnings/return_value_discarded=false
 
 [display]
 

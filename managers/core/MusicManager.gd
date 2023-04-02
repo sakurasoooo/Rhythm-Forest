@@ -32,3 +32,7 @@ func _get_beat():
 func one_beat():
 	beat_count += 1
 	emit_signal("beat", beat_count)
+
+func reset():
+	music_player.stop()
+	music_player.play()

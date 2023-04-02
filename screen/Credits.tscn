@@ -129,7 +129,7 @@ align = 1
 [node name="Section5" type="VBoxContainer" parent="Canvas/Container"]
 margin_top = 551.0
 margin_right = 426.0
-margin_bottom = 603.0
+margin_bottom = 631.0
 
 [node name="Title" type="Label" parent="Canvas/Container/Section5"]
 margin_right = 426.0
@@ -145,10 +145,17 @@ margin_bottom = 52.0
 text = "REDVILLUSION - Outline Shader"
 align = 1
 
-[node name="Section3" type="VBoxContainer" parent="Canvas/Container"]
-margin_top = 653.0
+[node name="Name2" type="Label" parent="Canvas/Container/Section5"]
+margin_top = 56.0
 margin_right = 426.0
-margin_bottom = 705.0
+margin_bottom = 80.0
+text = "kidscancode- Camera Shake"
+align = 1
+
+[node name="Section3" type="VBoxContainer" parent="Canvas/Container"]
+margin_top = 681.0
+margin_right = 426.0
+margin_bottom = 733.0
 
 [node name="Title" type="Label" parent="Canvas/Container/Section3"]
 margin_right = 426.0

@@ -1,4 +1,5 @@
 extends KinematicBody
+class_name PlayerControllter
 
 export(float) var speed = 2.0
 
@@ -43,7 +44,6 @@ func _physics_process(delta):
 
 func _on_beat(_value):
 	_set_just_beat()
-	print(wall_raycast.is_colliding())
 
 func _set_just_beat():
 	just_beat = 0.05 + GameSetting.delay
@@ -66,15 +66,35 @@ func _move_forward():
 		Tween.EASE_OUT
 	)
 	tween.tween_callback(InputManager,"unlock")
+	tween.tween_callback(self,"_check_ground")
 
 
 func _move_bounce():
 	InputManager.lock()
+	
 	var tween := create_tween()
 	tween.tween_property(self, "translation",  _forward() / 2.0 * speed, 0.15).as_relative().set_trans(Tween.TRANS_QUAD).set_ease(
 		Tween.EASE_IN
 	)
+	tween.tween_callback(self,"_shake")
 	tween.tween_property(self, "translation" , - _forward() / 2.0 * speed, 0.15).as_relative().set_trans(Tween.TRANS_QUAD).set_ease(
 		Tween.EASE_OUT
 	)
 	tween.tween_callback(InputManager,"unlock")
+
+func _shake():
+	Global.emit_signal("camera_shake",0.3)
+
+
+func _move_fall():
+	InputManager.lock()
+	var tween := create_tween()
+	tween.tween_property(self, "rotation_degrees", Vector3.LEFT * 90, 0.2).as_relative().set_trans(Tween.TRANS_QUAD).set_ease(
+		Tween.EASE_IN
+	)
+
+func _check_ground():
+	if ground_raycast.is_colliding():
+		var area =  ground_raycast.get_collider()
+		if area.get_collision_layer_bit(6):
+			_move_fall()
