@@ -11,6 +11,10 @@ onready var wall_grid := preload("res://objects/grids/bases/BaseGroundwWall.tscn
 onready var stair_grid := preload("res://objects/grids/bases/BaseNextLevel.tscn")
 onready var	void_trap_grid := preload("res://objects/grids/bases/BaseVoid.tscn")
 onready var	water_trap_grid := preload("res://objects/grids/bases/BaseWater.tscn")
+onready var gold_chest_grid := preload("res://objects/grids/bases/BaseGroundwGoldChest.tscn")
+onready var wood_chest_grid := preload("res://objects/grids/bases/BaseGroundwWoodChest.tscn")
+
+onready var enemy_scene := preload("res://objects/Enemy.tscn")
 
 var map = []
 

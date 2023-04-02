@@ -1,16 +1,43 @@
 extends Node
 
+var level:int = 1  setget , get_lv
+var experience:int = 0 setget , get_exp
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var health:int = 0 setget , get_health
+
+var strength:int = 1 setget , get_strength
+var intellegence:int  = 1 setget , get_intellegence
+var agile:int = 1 setget  , get_agile
+var luck:int  = 1  setget, get_luck
+
+var axe:bool = false setget , has_axe
+
+func get_lv()-> int:
+	return level
+
+func get_exp()-> int:
+	return experience
+
+func get_health()-> int:
+	return health
+
+func get_strength()-> int:
+	return strength
+
+func get_intellegence()-> int:
+	return intellegence
+
+func get_agile()-> int:
+	return agile
+
+func get_luck() -> int:
+	return luck
+
+func has_axe() -> bool:
+	return axe
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func _get_next_exp():
+	var x = level + 1
+	return 25 * pow(x,3) - 75 * pow(x,2) + 100 * x
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

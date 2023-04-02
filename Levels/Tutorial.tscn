@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://levels/Map.gd" type="Script" id=1]
-[ext_resource path="res://screen/HUD.gd" type="Script" id=2]
 [ext_resource path="res://objects/grids/bases/BaseGround.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/grids/bases/BaseGroundwSolid.tscn" type="PackedScene" id=5]
@@ -18,8 +17,6 @@ unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1 )
 
 [node name="HUD" parent="." instance=ExtResource( 10 )]
-script = ExtResource( 2 )
-player_path = NodePath("../Player")
 
 [node name="Map" type="Spatial" parent="."]
 unique_name_in_owner = true
