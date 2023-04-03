@@ -14,3 +14,8 @@ signal change_map_start()
 signal change_map_end()
 
 signal fall_damage()
+signal got_damage()
+
+signal combat_start()
+
+signal combat_end()

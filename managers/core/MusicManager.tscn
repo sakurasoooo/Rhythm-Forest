@@ -252,6 +252,20 @@ tracks/3/keys = {
 "update": 0,
 "values": [ -17.943, 0.0, 0.0, -18.0 ]
 }
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 120 ],
+"method": "set_tempo"
+} ]
+}
 
 [node name="MusicManager" type="Node"]
 script = ExtResource( 1 )
@@ -262,6 +276,7 @@ anims/Level1 = SubResource( 1 )
 
 [node name="MainTrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+volume_db = -17.943
 bus = "Music"
 
 [node name="Instrument1Track" type="AudioStreamPlayer" parent="."]

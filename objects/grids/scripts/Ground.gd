@@ -19,7 +19,7 @@ func _ready():
 
 func _on_beat(_value):
 	
-	if ((int(global_translation.z) + int(global_translation.x)) / 2) % 2  == 0:
+	if is_inside_tree() and ((int(global_translation.z) + int(global_translation.x)) / 2) % 2  == 0:
 		if count == 0:
 			set_mesh_color(Color.white)
 		if count == 1:

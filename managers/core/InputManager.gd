@@ -48,6 +48,7 @@ func get_right_just_pressed():
 	return right_just_pressed
 
 func lock():
+	
 	_lock_count = clamp(_lock_count + 1,0, 99)
 	locked = true
 

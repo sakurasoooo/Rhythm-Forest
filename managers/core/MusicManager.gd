@@ -5,6 +5,8 @@ signal beat(count)
 var beat_type := 4
 var beat_count := 0 setget _set_beat, _get_beat
 
+var bpm := 120
+
 onready var music_player = $MusicPlayer
 
 onready var main_track = $MainTrack
@@ -36,3 +38,9 @@ func one_beat():
 func reset():
 	music_player.stop()
 	music_player.play()
+
+func set_tempo(value: int):
+	bpm = value
+
+func get_beat_delta() -> float:
+	return 60.0 / bpm

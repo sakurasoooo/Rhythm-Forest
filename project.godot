@@ -12,7 +12,17 @@ _global_script_classes=[ {
 "base": "Item",
 "class": "AxeItem",
 "language": "GDScript",
-"path": "res://presets/item/axe.gd"
+"path": "res://presets/item/axe/axe.gd"
+}, {
+"base": "Spatial",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://objects/enemies/Enemy.gd"
+}, {
+"base": "Resource",
+"class": "EnemyData",
+"language": "GDScript",
+"path": "res://presets/enemy/EnemyData.gd"
 }, {
 "base": "Resource",
 "class": "Item",
@@ -26,6 +36,8 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "AxeItem": "",
+"Enemy": "",
+"EnemyData": "",
 "Item": "",
 "PlayerControllter": ""
 }
@@ -46,6 +58,7 @@ PlayerData="*res://managers/core/PlayerData.gd"
 SceneManager="*res://managers/core/SceneManager.gd"
 GameSetting="*res://managers/core/GameSetting.gd"
 Global="*res://managers/scripts/Global.gd"
+CombatManager="*res://managers/core/CombatManager.gd"
 
 [debug]
 

@@ -1,16 +1,27 @@
 extends Node
 
+enum ACTION { IDLE, EVADE, ATTACK, DEFENCE, COUNTER }
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var player_action: int = ACTION.IDLE
+
+var enemy_action: int = ACTION.IDLE
+
+var enemy_data: EnemyData = null
+
+signal player_attack
+
+signal enemy_attack
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	MusicManager.connect("beat", self, "_on_beat")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_beat(_value):
+	call_deferred("reset_actions_flag")
+
+
+func reset_actions_flag():
+	player_action = ACTION.IDLE
+	enemy_action = ACTION.IDLE

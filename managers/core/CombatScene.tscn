@@ -1,3 +1,87 @@
-[gd_scene format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://managers/core/Combat.gd" type="Script" id=1]
+[ext_resource path="res://objects/grids/bases/BaseGround.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/grids/bases/BaseGroundwSolid.tscn" type="PackedScene" id=5]
 
 [node name="Combat" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="EenemyPoint" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1 )
+
+[node name="Center" parent="EenemyPoint" instance=ExtResource( 2 )]
+
+[node name="SpotLight" type="SpotLight" parent="EenemyPoint/Center"]
+transform = Transform( 0.997697, -2.96459e-09, 0.0678218, -0.0678218, -4.36107e-08, 0.997697, 0, -1, -4.37114e-08, 1.1, 3, 1.19209e-07 )
+light_color = Color( 0.878431, 0.372549, 1, 1 )
+spot_range = 10.114
+spot_angle = 28.58
+
+[node name="SpotLight2" type="SpotLight" parent="EenemyPoint/Center"]
+transform = Transform( 0.970763, 1.04925e-08, -0.24004, 0.24004, -4.24334e-08, 0.970763, 0, -1, -4.37114e-08, -1.4, 3, 1.19209e-07 )
+light_color = Color( 0.878431, 0.372549, 1, 1 )
+spot_range = 10.114
+spot_angle = 28.58
+
+[node name="SpotLight3" type="SpotLight" parent="EenemyPoint/Center"]
+transform = Transform( 0.970763, 1.04925e-08, -0.24004, 0.24004, -4.24334e-08, 0.970763, 0, -1, -4.37114e-08, -1, 3, 1 )
+light_color = Color( 0.878431, 0.372549, 1, 1 )
+spot_range = 10.114
+spot_angle = 28.58
+
+[node name="Base" parent="EenemyPoint" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
+
+[node name="Base2" parent="EenemyPoint" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2 )
+
+[node name="Base3" parent="EenemyPoint" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0 )
+
+[node name="Base4" parent="EenemyPoint" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2 )
+
+[node name="Base5" parent="EenemyPoint" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2 )
+
+[node name="Base6" parent="EenemyPoint" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2 )
+
+[node name="Base7" parent="EenemyPoint" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0 )
+
+[node name="Base9" parent="EenemyPoint" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0 )
+
+[node name="Base10" parent="EenemyPoint" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 2.1 )
+
+[node name="Base11" parent="EenemyPoint" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -2.1 )
+
+[node name="Base12" parent="EenemyPoint" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4 )
+
+[node name="Base13" parent="EenemyPoint" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -4 )
+
+[node name="Base14" parent="EenemyPoint" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.57628e-07, 0, -4 )
+
+[node name="Base15" parent="EenemyPoint" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -4 )
+
+[node name="Base8" parent="EenemyPoint" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2 )
+
+[node name="PlayerPoint2" type="Spatial" parent="."]
+transform = Transform( 0.765853, -0.200367, 0.611, 0, 0.950212, 0.311605, -0.643015, -0.238644, 0.727723, 2.6, 0.2, 3 )
+
+[node name="PlayerCenter" type="Spatial" parent="PlayerPoint2"]
+
+[node name="Player" parent="PlayerPoint2/PlayerCenter" instance=ExtResource( 3 )]
+state = 1
+
+[editable path="PlayerPoint2/PlayerCenter/Player"]
