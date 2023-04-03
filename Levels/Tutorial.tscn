@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://levels/Map.gd" type="Script" id=1]
 [ext_resource path="res://assets/TilePack/Brick05.png" type="Texture" id=2]
@@ -13,6 +13,13 @@
 [ext_resource path="res://levels/removeItem.gd" type="Script" id=11]
 [ext_resource path="res://objects/Enemy.tscn" type="PackedScene" id=12]
 [ext_resource path="res://levels/SceneSwitcher.gd" type="Script" id=13]
+[ext_resource path="res://assets/fonts/kenney_fontpackage/Fonts/Kenney Pixel.ttf" type="DynamicFontData" id=14]
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 14 )
 
 [sub_resource type="SpatialMaterial" id=1]
 resource_local_to_scene = true
@@ -44,19 +51,35 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1 )
 [node name="Base2" parent="Maze/Map" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1 )
 
+[node name="Label3D" type="Label3D" parent="Maze/Map/Base2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0 )
+billboard = 2
+text = "Use \"W\" to Move"
+font = SubResource( 3 )
+
 [node name="Base3" parent="Maze/Map" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3 )
 
 [node name="Base4" parent="Maze/Map" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -5 )
 
-[node name="Enemy" parent="Maze/Map/Base4" instance=ExtResource( 12 )]
+[node name="Label3D" type="Label3D" parent="Maze/Map/Base4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0 )
+billboard = 2
+text = "Follow the Beat"
+font = SubResource( 3 )
 
 [node name="Base5" parent="Maze/Map" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -7 )
 
 [node name="Base6" parent="Maze/Map" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -9 )
+
+[node name="Label3D" type="Label3D" parent="Maze/Map/Base6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0 )
+billboard = 2
+text = "Use \"D\" to Turn Right"
+font = SubResource( 3 )
 
 [node name="Base8" parent="Maze/Map" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -9 )
@@ -70,6 +93,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -9 )
 [node name="Base11" parent="Maze/Map" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -9 )
 
+[node name="Label3D" type="Label3D" parent="Maze/Map/Base11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0 )
+billboard = 2
+text = "Use \"A\" to Turn Left"
+font = SubResource( 3 )
+
 [node name="Base12" parent="Maze/Map" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -9 )
 
@@ -82,14 +111,36 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -13 )
 [node name="Base15" parent="Maze/Map" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -15 )
 
+[node name="Label3D" type="Label3D" parent="Maze/Map/Base15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0 )
+billboard = 2
+text = "Use \"W\" to 
+Open Chest"
+font = SubResource( 3 )
+
 [node name="Base20" parent="Maze/Map" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -21 )
+
+[node name="Label3D" type="Label3D" parent="Maze/Map/Base20"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0 )
+billboard = 2
+text = "Use \"A\" or \"D\"
+ to Evade "
+font = SubResource( 3 )
 
 [node name="Base21" parent="Maze/Map" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -25 )
 
+[node name="Enemy" parent="Maze/Map/Base21" instance=ExtResource( 12 )]
+
 [node name="Base17" parent="Maze/Map" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -19 )
+
+[node name="Label3D" type="Label3D" parent="Maze/Map/Base17"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0 )
+billboard = 2
+text = "Use \"W\" to Hit Enemy"
+font = SubResource( 3 )
 
 [node name="Base18" parent="Maze/Map" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -23 )
@@ -105,6 +156,13 @@ item_scene = "res://objects/item/Axe.tscn"
 
 [node name="Ground" parent="Maze/Map/Base7" index="2"]
 material/0 = SubResource( 1 )
+
+[node name="Label3D" type="Label3D" parent="Maze/Map/Base7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0 )
+billboard = 2
+text = "Use \"W\" to 
+Hit the Wall"
+font = SubResource( 3 )
 
 [node name="Next" parent="Maze/Map" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -31 )

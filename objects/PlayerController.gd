@@ -89,7 +89,8 @@ func _on_beat(_value):
 			if CombatManager.player_action == CombatManager.ACTION.ATTACK:
 				CombatManager.emit_signal("player_attack")
 				_normal_attack()
-
+			elif CombatManager.player_action == CombatManager.ACTION.EVADE:
+				_normal_evade()
 
 func _normal_attack():
 	InputManager.lock()
@@ -103,6 +104,18 @@ func _normal_attack():
 	)
 	tween.tween_callback(InputManager, "unlock")
 
+
+func _normal_evade():
+	InputManager.lock()
+
+	var tween := create_tween()
+	tween.tween_property(self, "translation", Vector3.LEFT / 2.0 * speed, 0.1).as_relative().set_trans(Tween.TRANS_QUAD).set_ease(
+		Tween.EASE_IN
+	)
+	tween.tween_property(self, "translation", -Vector3.LEFT  / 2.0 * speed, 0.15).as_relative().set_trans(Tween.TRANS_QUAD).set_ease(
+		Tween.EASE_OUT
+	)
+	tween.tween_callback(InputManager, "unlock")
 
 func _set_just_beat():
 	if just_beat < -(0.5 - (0.05 + GameSetting.delay)):
@@ -204,11 +217,10 @@ func _check_ground():
 
 
 func _handle_attack():
-	print("got attack")
 	if CombatManager.player_action == CombatManager.ACTION.EVADE:
 		return
 	if rand_range(0, 100) >= ((100 - pow(PlayerData.get_agile(), 3)) - PlayerData.get_luck()):
 		return
 
-	PlayerData.apply_damage(CombatManager.enemy_data.damage)
+	PlayerData.apply_damage(CombatManager.enemy_data.damage - PlayerData.get_defence())
 	Global.emit_signal("got_damage")

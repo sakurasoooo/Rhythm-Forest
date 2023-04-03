@@ -27,16 +27,17 @@ func _goto_combat_scene():
 	combat_node = combat_scene.instance()
 	add_child(combat_node)
 
-	InputManager.unlock()
 	while (InputManager.locked):
-		extra_unlock += 1
 		InputManager.unlock()
 
 
 func _back_to_maze():
+	InputManager.unlock()
+
 	remove_child(combat_node)
 	combat_node.call_deferred("queue_free")
 	add_child(maze_node)
-	InputManager.unlock()
-	for _i in range(extra_unlock):
-		InputManager.lock()
+	
+	InputManager.lock()
+
+	InputManager.call_deferred("unlock")

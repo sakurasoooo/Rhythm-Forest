@@ -1,6 +1,6 @@
 extends Enemy
 
-onready var health: int = data.max_health
+# onready var health: int = data.max_health
 
 
 # Called when the node enters the scene tree for the first time.
@@ -8,6 +8,7 @@ func _ready():
 	MusicManager.connect("beat", self, "_on_beat")
 	CombatManager.connect("player_attack", self, "_handle_attack")
 	CombatManager.enemy_data = data
+	CombatManager.enemy_health = data.max_health
 
 
 var just_beat = 0
@@ -56,7 +57,7 @@ func _physics_process(delta):
 	just_beat -= delta
 	next_beat -= delta
 
-	if health <= 0:
+	if CombatManager.enemy_health <= 0:
 		set_physics_process(false)
 		call_deferred("_end_combat")
 
@@ -79,9 +80,9 @@ func _handle_attack():
 			* extra_rate
 		)
 		
-		health = int(clamp( health - player_damage, 0, data.max_health))
+		CombatManager.enemy_health = int(clamp( CombatManager.enemy_health - player_damage, 0, data.max_health))
 		_hurt(player_damage)
-		print(name + " " + str(health))
+		# print(name + " " + str(health))
 
 
 func _hurt(_value):
@@ -91,13 +92,15 @@ func _hurt(_value):
 
 
 func _end_combat():
+	visible = false
 	InputManager.lock()
 	Global.emit_signal("camera_shake", 0.8)
 	MusicManager.disconnect("beat", self, "_on_beat")
 	CombatManager.enemy_data = null
 	PlayerData.add_exp(data.experience)
-	Global.emit_signal("combat_end")
-	call_deferred("queue_free")
+
+	var tween := create_tween()
+	tween.tween_callback(Global,"emit_signal",["combat_end"]).set_delay(1)
 
 func _normal_attack():
 

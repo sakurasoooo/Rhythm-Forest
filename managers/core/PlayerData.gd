@@ -14,7 +14,7 @@ var intellegence: int = 1 setget , get_intellegence
 var agile: int = 1 setget , get_agile
 var luck: int = 1 setget , get_luck
 
-var defence: int = 1 setget , get_defence
+var defence: int = 0 setget , get_defence
 
 var axe: bool = false setget , has_axe
 
@@ -106,13 +106,13 @@ func add_exp(value):
 
 	while experience >= _get_next_exp():
 		experience = _get_next_exp() - experience
-		_updgrade()
+		_upgrade()
 
 
-func _updgrade():
+func _upgrade():
 	randomize()
 	level += 1
-	health += 1
+	health = max_health
 	match randi() % 4:
 		0:
 			luck += 1

@@ -30,7 +30,7 @@ onready var luc_text = $Control/DataBG/Data/HFlowContainer5/LUC
 
 onready var def_text = $Control/DataBG/Data/HFlowContainer6/DEF
 
-# var player
+onready var health_bar = $Control/Health
 
 
 # Called when the node enters the scene tree for the first time.
@@ -123,3 +123,11 @@ func _process(_delta):
 	luc_text.text = "LUC:{number}".format({"number": str(PlayerData.get_luck())})
 
 	def_text.text = "DEF:{number}".format({"number": str(PlayerData.get_defence())})
+
+	var health_count = PlayerData.health
+	for _h in range(PlayerData.max_health):
+		if health_count > 0:
+			health_count -= 1
+			health_bar.get_child(_h).visible = true
+		else:
+			health_bar.get_child(_h).visible = false

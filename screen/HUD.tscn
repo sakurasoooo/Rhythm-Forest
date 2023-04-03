@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://managers/scripts/BeatSyncAnimation.gd" type="Script" id=1]
 [ext_resource path="res://screen/scripts/HUD.gd" type="Script" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://assets/ui/solidcircle.png" type="Texture" id=4]
 [ext_resource path="res://assets/ui/circle.png" type="Texture" id=5]
 [ext_resource path="res://assets/fonts/kenney_fontpackage/Fonts/Kenney Blocks.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/ui/icon002.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/icon001.png" type="Texture" id=8]
 
 [sub_resource type="Animation" id=150]
 resource_name = "Hurt"
@@ -277,6 +279,7 @@ align = 1
 valign = 1
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
+visible = false
 margin_right = 400.0
 margin_bottom = 110.0
 color = Color( 0.941176, 0.443137, 1, 0.423529 )
@@ -286,6 +289,7 @@ script = ExtResource( 1 )
 anims/Beat = SubResource( 1 )
 
 [node name="ColorRect2" type="ColorRect" parent="Control"]
+visible = false
 margin_right = 237.214
 margin_bottom = 81.0
 color = Color( 0.258824, 0.635294, 0, 1 )
@@ -454,3 +458,288 @@ custom_fonts/font = SubResource( 152 )
 text = "Floor 1"
 align = 1
 valign = 1
+
+[node name="HealthBG" type="HFlowContainer" parent="Control"]
+margin_right = 176.0
+margin_bottom = 76.0
+
+[node name="HeartRed" type="TextureRect" parent="Control/HealthBG"]
+visible = false
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 8 )
+
+[node name="HeartRed2" type="TextureRect" parent="Control/HealthBG"]
+visible = false
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 8 )
+
+[node name="HeartRed3" type="TextureRect" parent="Control/HealthBG"]
+visible = false
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 8 )
+
+[node name="HeartRed4" type="TextureRect" parent="Control/HealthBG"]
+visible = false
+margin_left = 108.0
+margin_right = 140.0
+margin_bottom = 32.0
+texture = ExtResource( 8 )
+
+[node name="HeartRed5" type="TextureRect" parent="Control/HealthBG"]
+visible = false
+margin_left = 144.0
+margin_right = 176.0
+margin_bottom = 32.0
+texture = ExtResource( 8 )
+
+[node name="HeartRed6" type="TextureRect" parent="Control/HealthBG"]
+visible = false
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 8 )
+
+[node name="HeartRed7" type="TextureRect" parent="Control/HealthBG"]
+visible = false
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 8 )
+
+[node name="HeartRed8" type="TextureRect" parent="Control/HealthBG"]
+visible = false
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 8 )
+
+[node name="HeartRed9" type="TextureRect" parent="Control/HealthBG"]
+visible = false
+margin_left = 108.0
+margin_top = 36.0
+margin_right = 140.0
+margin_bottom = 68.0
+texture = ExtResource( 8 )
+
+[node name="HeartRed10" type="TextureRect" parent="Control/HealthBG"]
+visible = false
+margin_left = 144.0
+margin_top = 36.0
+margin_right = 176.0
+margin_bottom = 68.0
+texture = ExtResource( 8 )
+
+[node name="Heart" type="TextureRect" parent="Control/HealthBG"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 7 )
+
+[node name="Heart2" type="TextureRect" parent="Control/HealthBG"]
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 7 )
+
+[node name="Heart3" type="TextureRect" parent="Control/HealthBG"]
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 7 )
+
+[node name="Heart4" type="TextureRect" parent="Control/HealthBG"]
+margin_left = 108.0
+margin_right = 140.0
+margin_bottom = 32.0
+texture = ExtResource( 7 )
+
+[node name="Heart5" type="TextureRect" parent="Control/HealthBG"]
+margin_left = 144.0
+margin_right = 176.0
+margin_bottom = 32.0
+texture = ExtResource( 7 )
+
+[node name="Heart6" type="TextureRect" parent="Control/HealthBG"]
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 7 )
+
+[node name="Heart7" type="TextureRect" parent="Control/HealthBG"]
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 7 )
+
+[node name="Heart8" type="TextureRect" parent="Control/HealthBG"]
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 7 )
+
+[node name="Heart9" type="TextureRect" parent="Control/HealthBG"]
+margin_left = 108.0
+margin_top = 36.0
+margin_right = 140.0
+margin_bottom = 68.0
+texture = ExtResource( 7 )
+
+[node name="Heart10" type="TextureRect" parent="Control/HealthBG"]
+margin_left = 144.0
+margin_top = 36.0
+margin_right = 176.0
+margin_bottom = 68.0
+texture = ExtResource( 7 )
+
+[node name="Health" type="HFlowContainer" parent="Control"]
+margin_right = 176.0
+margin_bottom = 76.0
+
+[node name="HeartRed" type="TextureRect" parent="Control/Health"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 8 )
+
+[node name="HeartRed2" type="TextureRect" parent="Control/Health"]
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 8 )
+
+[node name="HeartRed3" type="TextureRect" parent="Control/Health"]
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 8 )
+
+[node name="HeartRed4" type="TextureRect" parent="Control/Health"]
+margin_left = 108.0
+margin_right = 140.0
+margin_bottom = 32.0
+texture = ExtResource( 8 )
+
+[node name="HeartRed5" type="TextureRect" parent="Control/Health"]
+margin_left = 144.0
+margin_right = 176.0
+margin_bottom = 32.0
+texture = ExtResource( 8 )
+
+[node name="HeartRed6" type="TextureRect" parent="Control/Health"]
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+texture = ExtResource( 8 )
+
+[node name="HeartRed7" type="TextureRect" parent="Control/Health"]
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+texture = ExtResource( 8 )
+
+[node name="HeartRed8" type="TextureRect" parent="Control/Health"]
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+texture = ExtResource( 8 )
+
+[node name="HeartRed9" type="TextureRect" parent="Control/Health"]
+margin_left = 108.0
+margin_top = 36.0
+margin_right = 140.0
+margin_bottom = 68.0
+texture = ExtResource( 8 )
+
+[node name="HeartRed10" type="TextureRect" parent="Control/Health"]
+margin_left = 144.0
+margin_top = 36.0
+margin_right = 176.0
+margin_bottom = 68.0
+texture = ExtResource( 8 )
+
+[node name="Heart" type="TextureRect" parent="Control/Health"]
+visible = false
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+texture = ExtResource( 7 )
+
+[node name="Heart2" type="TextureRect" parent="Control/Health"]
+visible = false
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+texture = ExtResource( 7 )
+
+[node name="Heart3" type="TextureRect" parent="Control/Health"]
+visible = false
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
+texture = ExtResource( 7 )
+
+[node name="Heart4" type="TextureRect" parent="Control/Health"]
+visible = false
+margin_left = 108.0
+margin_top = 72.0
+margin_right = 140.0
+margin_bottom = 104.0
+texture = ExtResource( 7 )
+
+[node name="Heart5" type="TextureRect" parent="Control/Health"]
+visible = false
+margin_left = 144.0
+margin_top = 72.0
+margin_right = 176.0
+margin_bottom = 104.0
+texture = ExtResource( 7 )
+
+[node name="Heart6" type="TextureRect" parent="Control/Health"]
+visible = false
+margin_top = 108.0
+margin_right = 32.0
+margin_bottom = 140.0
+texture = ExtResource( 7 )
+
+[node name="Heart7" type="TextureRect" parent="Control/Health"]
+visible = false
+margin_left = 36.0
+margin_top = 108.0
+margin_right = 68.0
+margin_bottom = 140.0
+texture = ExtResource( 7 )
+
+[node name="Heart8" type="TextureRect" parent="Control/Health"]
+visible = false
+margin_left = 72.0
+margin_top = 108.0
+margin_right = 104.0
+margin_bottom = 140.0
+texture = ExtResource( 7 )
+
+[node name="Heart9" type="TextureRect" parent="Control/Health"]
+visible = false
+margin_left = 108.0
+margin_top = 108.0
+margin_right = 140.0
+margin_bottom = 140.0
+texture = ExtResource( 7 )
+
+[node name="Heart10" type="TextureRect" parent="Control/Health"]
+visible = false
+margin_left = 144.0
+margin_top = 108.0
+margin_right = 176.0
+margin_bottom = 140.0
+texture = ExtResource( 7 )

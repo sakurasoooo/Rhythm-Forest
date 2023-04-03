@@ -8,6 +8,8 @@ var enemy_action: int = ACTION.IDLE
 
 var enemy_data: EnemyData = null
 
+var enemy_health := 0
+
 signal player_attack
 
 signal enemy_attack

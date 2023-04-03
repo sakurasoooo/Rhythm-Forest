@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://managers/core/Combat.gd" type="Script" id=1]
 [ext_resource path="res://objects/grids/bases/BaseGround.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://screen/EnemyGUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/grids/bases/BaseGroundwSolid.tscn" type="PackedScene" id=5]
 
 [node name="Combat" type="Spatial"]
@@ -30,6 +31,8 @@ transform = Transform( 0.970763, 1.04925e-08, -0.24004, 0.24004, -4.24334e-08, 0
 light_color = Color( 0.878431, 0.372549, 1, 1 )
 spot_range = 10.114
 spot_angle = 28.58
+
+[node name="GUI" parent="EenemyPoint/Center" instance=ExtResource( 4 )]
 
 [node name="Base" parent="EenemyPoint" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )

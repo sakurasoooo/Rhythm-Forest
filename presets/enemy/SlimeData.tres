@@ -4,8 +4,11 @@
 
 [resource]
 script = ExtResource( 1 )
+enemy_name = "EIGHT"
 level = 1
 damage = 1
-health = 3
+max_health = 10
+armor_defence = 0
+magic_defence = 0
 experience = 100
 track_name = "Combat"
