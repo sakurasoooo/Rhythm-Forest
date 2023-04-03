@@ -55,8 +55,8 @@ func new_map_arr(size: int) -> Array:
 	generate_monster(end,arr)
 
 	generate_safe_room(start,arr)
-	for row in arr:
-		print(row)
+	# for row in arr:
+	# 	print(row)
 	return arr
 
 

@@ -114,6 +114,34 @@ func _move_fall():
 	tween.tween_property(self, "rotation_degrees", Vector3.LEFT * 90, 0.2).as_relative().set_trans(Tween.TRANS_QUAD).set_ease(
 		Tween.EASE_IN
 	)
+	tween.tween_callback(Global, "emit_signal",["change_map",true])
+	Global.connect("change_map_end",self,"_fall_reset",[],CONNECT_ONESHOT)
+
+func _idle():
+	InputManager.lock()
+	Global.emit_signal("change_map",false)
+	Global.connect("change_map_end",self,"_idle_reset",[],CONNECT_ONESHOT)
+
+func _fall_reset():
+	_move_reset(true)
+
+func _idle_reset():
+	_move_reset()
+
+func _move_reset(fall:= false):
+	
+	if fall:
+		Global.emit_signal("camera_shake", 0.8)
+		Global.emit_signal("fall_damage")
+		PlayerData.apply_damage(1)
+		
+	var tween := create_tween()
+	tween.tween_property(self, "rotation_degrees", Vector3(0,rotation_degrees.y,0), 0.2).set_trans(Tween.TRANS_QUAD).set_ease(
+		Tween.EASE_IN
+	)
+	tween.tween_callback(InputManager, "unlock")
+
+	PlayerData.floor_num += 1
 
 
 func _check_ground():
@@ -121,3 +149,7 @@ func _check_ground():
 		var area = ground_raycast.get_collider()
 		if area.get_collision_layer_bit(6):
 			_move_fall()
+			return
+		if area.get_collision_layer_bit(4):
+			_idle()
+			return

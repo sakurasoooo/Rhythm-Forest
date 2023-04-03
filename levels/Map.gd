@@ -22,13 +22,10 @@ enum { STONE, EMPTY, WALL, PLAYER, STAIR, ITEM, TRAP, MONSTOR, CHEST, PATH }
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	return
-	yield (get_tree().create_timer(0.1),"timeout")
-
-	next_level()
+	Global.connect("change_map",self,"change_map")
 
 func next_level():
-	map.clear()
+	clean_map()
 	var new_map = SceneManager.new_map_arr(15)
 	var row = len(new_map)
 	var col = len(new_map[0])
@@ -72,7 +69,7 @@ func next_level():
 					new_grid.translation = grid_to_axis(Vector2(i,j))
 					# print("STAIR")
 				ITEM:
-					var new_grid = empty_grid.instance()
+					var new_grid = wood_chest_grid.instance()
 					map_root.add_child(new_grid)
 					row_map[j] = new_grid
 					new_grid.translation = grid_to_axis(Vector2(i,j))
@@ -89,9 +86,12 @@ func next_level():
 					row_map[j] = new_grid
 					new_grid.translation = grid_to_axis(Vector2(i,j))
 					#add Monster
+					var new_monster = enemy_scene.instance()
+					new_grid.add_child(new_monster)
+					new_monster.translation =  Vector3.ZERO
 					print("trap")
 				CHEST:
-					var new_grid = empty_grid.instance()
+					var new_grid = gold_chest_grid.instance()
 					map_root.add_child(new_grid)
 					row_map[j] = new_grid
 					new_grid.translation = grid_to_axis(Vector2(i,j))
@@ -105,7 +105,12 @@ func next_level():
 		map[i] = (row_map)
 
 
+func clean_map():
+	for child in get_children():
+		child.call_deferred("queue_free")
 
+	map.clear()
+	
 
 
 
@@ -114,3 +119,26 @@ func axis_to_grid(pos:Vector3):
 
 func grid_to_axis(pos:Vector2):
 	return Vector3((pos[0] + 1) * 2 - 1 , 0 , (pos[1] + 1) * 2 - 1)
+
+
+func change_map(fall):
+	if fall:
+		fall_next_level_trasition()
+	else:
+		next_level_trasition()
+
+func fall_next_level_trasition():
+	Global.emit_signal("change_map_start")
+	var tween = create_tween()
+	tween.tween_property(self,"translation",Vector3.UP * 10, 3).as_relative()
+	tween.tween_property(self,"translation",Vector3.DOWN * 20, 0).as_relative()
+	tween.tween_callback(self,"next_level")
+	tween.tween_property(self,"translation",Vector3.ZERO, 1).set_delay(1)
+	tween.tween_callback(Global,"emit_signal",["change_map_end"])
+
+func next_level_trasition():
+	Global.emit_signal("change_map_start")
+	var tween = create_tween()
+	tween.tween_callback(self,"next_level").set_delay(2)
+	tween.tween_callback(Global,"emit_signal",["change_map_end"]).set_delay(1)
+
