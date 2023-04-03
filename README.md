@@ -27,7 +27,7 @@ Go forward and hit the box to open the chest.
 ---
 
 ![Alt text](image/wall.png/?raw=true)
-
+![Alt text](image/test.gif/?raw=true)
 ## Break Wall
 
 When you hold a **[AXE]**, go forward and hit to destroy the wall.  
